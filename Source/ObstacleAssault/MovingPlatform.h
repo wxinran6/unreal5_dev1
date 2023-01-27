@@ -45,11 +45,14 @@ private:
 	float DistanceMoved = 1.0;
 	FVector StartLocation;
 
+	UPROPERTY(EditAnywhere, Category="rotation")
+	FRotator RotationVelocity;
+
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	float MovedDistanceCheck = 100;
 
 	void MovePlatform(float DeltaTime);
 	void RotatePlatform(float DeltaTime);
-	bool ShouldPlatformReturn();
-	float GetDistanceMoved();
+	bool ShouldPlatformReturn() const;
+	float GetDistanceMoved() const;
 };
